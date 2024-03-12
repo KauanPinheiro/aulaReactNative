@@ -5,10 +5,13 @@ import styleSoma from "../styleSoma";
 
 
 export default props => {
-    
+  
+
+        
 
     return(
         <View>
+
                   <Text style={styleSoma.textG}>Valor 1</Text>
                         <Text style={styleSoma.textG}></Text>
 
@@ -18,6 +21,7 @@ export default props => {
             <Button title="Soma"/>
 
             <Text style={styleSoma.textG}>Resultado</Text>
+  
 
                 
             

@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import styleSoma from "./styleSoma";
 import SomaValores from "./components/SomaValores";
-
+import EntradaText from "./components/EntradaText";
 
 
 export default () => {
@@ -10,10 +10,10 @@ export default () => {
     return(
         <View style={style.fundo}>
 
-                <Text style={styleSoma.textG}>Soma Valor</Text>
-
-            <SomaValores valor={100}/>
-            <SomaValores valor={200}/>
+                <EntradaText/>
+              {/*  <Text style={styleSoma.textG}>Soma Valor</Text>
+                    <SomaValores num1={300} num2={400}/>*/}
+            
             
         </View>
 
@@ -26,7 +26,11 @@ const style = StyleSheet.create(
             flexGrow: 1,
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#1C1C1C"
+            /*backgroundColor: "#1C1C1C"*/
+        },
+        titulo:{
+            fontSize: 40,
+            color: "#FFFF00"
         }
     }
     
