@@ -1,15 +1,24 @@
 import React, { useState } from "react";
-import { Button, Image, SafeAreaView, StyleSheet, TextInput, View } from "react-native";
+import { Button, Image, SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
 import estilo from "./estilo";
 
 export default props => {
 
-    const[use, setUse10] = useState("")
-    const[senha,setSenha] = useState("")
+    const[usuario, setUsuario] = useState("")
+    const[senha, setSenha] = useState("")
 
-    const btnEntre = () => {console.warn("Bem vindo ao sistema!")}
+    const btnEntre = () => {
+       if(usuario == "test@gmail.com" && senha == "1234"){
+                console.warn(`Seja bem-vindo(a)`) 
+       }else{
+                console.warn(`Usuário inválido!`)
+       }
+        
+    }
 
-    const btnSair = () => {console.warn("Sessão encerrada!")}
+    const btnSair = () => {
+        console.warn("Sessão encerrada!")
+    }
     
     return(
         <View>
@@ -18,45 +27,60 @@ export default props => {
                     <Image source={require('../img/count.png')} style={estilo.img}/>
                 </View>
 
-                <TextInput
-                    style={estilo.input}
-                    autoFocus
-                    textAlign="center"
-                    label = "Name"
-                    maxLength={20}
-                    placeholder="Insíra seu nome"
-                    keyboardType="name-phone-pad"
-                    placeholderTextColor="#FFFFFf"
-                            
-                />
 
-                <TextInput
-                    style={estilo.input}
-                    textAlign="center"
-                    label = "Senha"
-                    maxLength={20}
-                    placeholder="Insíra sua senha"
-                    keyboardType="name-phone-pad"
-                    placeholderTextColor="#FFFFFf"
-                    
-                />
+                <View>
+                    <TextInput
+                        color={"#FFFF"}
+                        style={estilo.input}
+                        autoFocus
+                        textAlign="center"
+                        label = "Name"
+                        value={usuario}
+                        onChangeText={usuario => setUsuario(usuario)}
+                        maxLength={50}
+                        placeholder="Insíra seu usuário"
+                        keyboardType="name-phone-pad"
+                        placeholderTextColor="#FFFFFf"
+                                
+                    />
+                </View>
 
+
+                <View>
+                    <TextInput
+                        color={"#FFFF"}
+                        style={estilo.input}
+                        textAlign="center"
+                        label = "Senha"
+                        value={senha}
+                        onChangeText={senha => setSenha(senha)}
+                        maxLength={20}
+                        placeholder="Insíra sua senha"
+                        keyboardType="name-phone-pad"
+                        placeholderTextColor="#FFFFFf"
+                    />
+                </View>
+
+                <Text style={estilo.textStyle}>Não tem usuário? Clique aqui.</Text>
+
+
+                <View style={estilo.containeBotao}>
                     <Button
-                    style={estilo.botao}
-                    color={"#D8BFD8"}
+                    color={"#3CB371"}
                     title="Entrar"
                     onPress={btnEntre}
-
-
                     />
+                </View>
 
-                    <Button 
-                    color={"#D8BFD8"}
+
+                <View style={estilo.containeBotao} >
+                <Button 
+                    color={"#FF6347"}
                     title="Sair"
                     onPress={btnSair}
                     />
-
-            
+                </View>
+                
                 
         </View>
     )

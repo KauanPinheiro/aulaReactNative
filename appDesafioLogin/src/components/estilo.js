@@ -2,6 +2,9 @@ import { StyleSheet } from  "react-native";
 
 const estilo =  StyleSheet.create(
     {
+
+       
+
         input:{
             width: 300,
             height: 70,
@@ -17,20 +20,27 @@ const estilo =  StyleSheet.create(
         positionImg:{
             alignItems:"center",
             justifyContent: "center",
+            marginBottom:60
 
             
         },
         img:{
-            width: 70,
-            height: 70,
+            width: 75,
+            height: 75,
         },
-        styleBtn:{
-            width:200,
+        containeBotao:{
+            margin: 14,
+            padding:1,
+           
+        },
 
-        },
-        botao:{
-            
-        }        
+        textStyle:{
+            color: "#fff",
+            fontSize: 13,
+            fontFamily: "Courier Prime",
+            marginLeft: 130,
+            marginBottom: 50
+        }
 
     }
 )

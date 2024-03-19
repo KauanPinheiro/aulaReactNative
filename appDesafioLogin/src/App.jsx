@@ -18,7 +18,6 @@ export default () => {
 const styleApp = StyleSheet.create(
     {
         body:{
-            flex: 1,
             flexGrow: 1,
             backgroundColor: "#4F4F4F",
             justifyContent:"center",
