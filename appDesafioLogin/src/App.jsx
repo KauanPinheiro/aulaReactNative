@@ -1,15 +1,18 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import Login from "./components/Login";
-
+import Cadastro from "./components/Cadastro";
 
 
 export default () => {
 
     return(
         <SafeAreaView style={styleApp.body}> 
+            <Cadastro/>
+            {/*
+                <Login/>
 
-            <Login/>
+            */}
 
         </SafeAreaView>
     )
