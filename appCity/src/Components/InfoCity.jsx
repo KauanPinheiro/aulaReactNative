@@ -25,6 +25,7 @@ export default props => {
                 <Text>Divine fish</Text>
             </Pressable>
 
+            <Pressable style={{marginBottom:200}}></Pressable>
             <Pressable style={style.button}>
                 <Text style={style.textButton}>Location name</Text>
             </Pressable>
@@ -62,6 +63,7 @@ const style = StyleSheet.create(
             color:"#222831",
         },
         button:{
+            
             margin:5,
             width: 400,
             height: 50,

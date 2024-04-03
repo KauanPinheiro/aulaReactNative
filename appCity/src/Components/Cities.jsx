@@ -5,9 +5,9 @@ export default props => {
 
     return(
         <View style={style.body}>
-            <Pressable style={style.pressable}>
-                <Text style={style.textG}>Paris</Text>
-                <Text>France</Text>
+            <Pressable style={style.pressable} onPress={()=> props.navigation.navigate("City")}>
+                <Text style={style.textG}>Tokyo</Text>
+                <Text>Japan</Text>
             </Pressable>
 
         </View>

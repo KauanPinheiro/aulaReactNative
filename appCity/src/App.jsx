@@ -16,9 +16,9 @@ export default props => {
         <SafeAreaView style={{flex:1}}>
             <NavigationContainer>
                 <stack.Navigator>
-                    {/*<stack.Screen name="Home" component={GetCity} />*/}
-                    {/*<stack.Screen name="Cities" component={Cities} />*/}
-                    {/*<stack.Screen name="City" component={ProfileCity} />*/}
+                    <stack.Screen name="Home" component={GetCity} />
+                    <stack.Screen name="Cities" component={Cities} />
+                    <stack.Screen name="City" component={ProfileCity}/>
                     <stack.Screen name="Info" component={InfoCity} />
                 </stack.Navigator>
             </NavigationContainer>

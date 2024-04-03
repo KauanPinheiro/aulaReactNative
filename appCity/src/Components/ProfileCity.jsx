@@ -14,7 +14,7 @@ export default props => {
                 <Text style={style.textButton}>Location name</Text>
             </Pressable>
 
-            <Pressable style={style.button}>
+            <Pressable style={style.button} onPress={()=>props.navigation.navigate("Info")}>
                 <Text style={style.textButton}>Location info</Text>
             </Pressable>
 
