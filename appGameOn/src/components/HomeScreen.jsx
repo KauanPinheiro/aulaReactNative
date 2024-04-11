@@ -14,7 +14,7 @@ export default props => {
                 <Image source={require('../img/GameOn.png')} style={style.imgFt}/>
             </Pressable>
 
-            <Pressable style={style.button}>
+            <Pressable style={style.button} onPress={()=> props.navigation.navigate('Login')}>
                 <Text style={style.textBtn}>Let´s Begin</Text>
                 <Icon name="arrow-forward-circle-sharp" size={25} color="#FFF"/>
             </Pressable>
