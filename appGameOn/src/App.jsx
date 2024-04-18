@@ -18,9 +18,21 @@ export default props => {
         <SafeAreaView style={{flex:1}}>
             <NavigationContainer>
                 <Stack.Navigator>
-                    <Stack.Screen name="Home" component={HomeScreen}/>
-                    <Stack.Screen name="Login" component={LoginScreen}/>
-                    <Stack.Screen name="Register" component={RegisterScreen}/>
+                    <Stack.Screen name="Home" component={HomeScreen} options={{
+                        headerShown: false
+                        }}/>
+                    <Stack.Screen name="Login" component={LoginScreen} options={{
+                     headerTitle:"",
+                     headerStyle:{backgroundColor:"#FFF7FC"},
+                     headerTransparent:100
+                        }}
+                     
+                     />
+                    <Stack.Screen name="Register" component={RegisterScreen} options={{
+                     headerTitle:"",
+                     headerStyle:{backgroundColor:"#FFF7FC"},
+                     headerTransparent:100
+                        }}/>
                 </Stack.Navigator>
             </NavigationContainer>
         </SafeAreaView>

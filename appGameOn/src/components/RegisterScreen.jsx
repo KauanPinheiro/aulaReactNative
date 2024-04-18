@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 export default props => {
 
     return(
-        <View>
+        <View style={style.body}>
             <Pressable style={style.contImg}>
                 <Image source={require('../img/imgRegistreScreen2.png')} style={style.img}/>
             </Pressable>
@@ -33,12 +33,12 @@ export default props => {
 
                 <Pressable style={style.container}>
                 <Pressable style={style.containerAlinhamento}>
-                        <Icon name="at" size={18} color="#B3C8CF"/>
+                        <Icon name="person-outline" size={18} color="#B3C8CF"/>
                         <TextInput
                         textAlign="left"
-                        label="Email"
+                        label="person"
                         keyboardType="name-phone-pad"
-                        placeholder="Email ID"
+                        placeholder="Full Name"
                         placeholderTextColor="#B3C8CF"
                         />
                     </Pressable>
@@ -55,34 +55,34 @@ export default props => {
                     </Pressable>
 
                 <Pressable style={style.containerAlinhamento}>
-                        <Icon name="at" size={18} color="#B3C8CF"/>
+                        <Icon name="key" size={18} color="#B3C8CF"/>
                         <TextInput
                         textAlign="left"
-                        label="Email"
+                        label="passaword"
                         keyboardType="name-phone-pad"
-                        placeholder="Email ID"
+                        placeholder="Password"
                         placeholderTextColor="#B3C8CF"
                         />
                     </Pressable>
 
                 <Pressable style={style.containerAlinhamento}>
-                        <Icon name="at" size={18} color="#B3C8CF"/>
+                        <Icon name="key" size={18} color="#B3C8CF"/>
                         <TextInput
                         textAlign="left"
-                        label="Email"
+                        label="Confirmpassword"
                         keyboardType="name-phone-pad"
-                        placeholder="Email ID"
+                        placeholder="Confirm Password"
                         placeholderTextColor="#B3C8CF"
                         />
                     </Pressable>
 
                 <Pressable style={style.containerAlinhamento}>
-                        <Icon name="at" size={18} color="#B3C8CF"/>
+                        <Icon name="calendar-outline" size={18} color="#B3C8CF"/>
                         <TextInput
                         textAlign="left"
-                        label="Email"
-                        keyboardType="phone-pad"
-                        placeholder="Email ID"
+                        label="Date"
+                        keyboardType="name-phone-pad"
+                        placeholder="Date od Birth"
                         placeholderTextColor="#B3C8CF"
                         />
                     </Pressable>
