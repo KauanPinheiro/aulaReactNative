@@ -19,9 +19,7 @@ const style = StyleSheet.create(
     {
         body:{
             flexGrow: 1,
-            backgroundColor: "#fff ",
-            justifyContent: "center",
-            alignItems: "center",
+            backgroundColor: "#fff "
         }
     }
 )
