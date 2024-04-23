@@ -19,20 +19,11 @@ export default () => {
             
             <Pressable style={estilo.alinhamentoText}>
                 <Text style={estilo.fonteG}>Welcome Back,</Text>
-                    <Text style={estilo.fontP}>Sing up continue</Text>
+                    <Text style={estilo.fontP}>Sign in to continue</Text>
             </Pressable>
 
-            <Pressable style={estilo.containerAlinhamento}>
-                <Icon name="person-outline" size={20} color="#B3C8CF"/>
-                    <TextInput
-                    //autoFocus
-                    label = "name"
-                    maxLength={50}
-                    placeholder="Name"
-                    keyboardType="name-phone-pad"
-                    />
-            </Pressable>
-
+                <Pressable style={{margin:10}}></Pressable>
+           
             <Pressable style={estilo.containerAlinhamento}>
                 <Icon name="mail-outline" size={20} color="#B3C8CF"/>
                     <TextInput
@@ -54,7 +45,7 @@ export default () => {
             </Pressable>
 
             <Pressable style={estilo.btn}>
-                <Text style={estilo.textBtn}>Sign Up</Text>
+                <Text style={estilo.textBtn}>Sign in</Text>
             </Pressable>
 
             <Text style={estilo.textOR}>OR</Text>
@@ -74,8 +65,8 @@ export default () => {
             </Pressable>
 
             <Pressable style={{flexDirection:"row"}}>
-                <Text style={estilo.textRodape}>Already have account ?</Text>
-                    <Text style={estilo.textRodape2}>Sing in</Text>
+                <Text style={estilo.textRodape}>Don´t have an account?</Text>
+                    <Text style={estilo.textRodape2}>sign up</Text>
             </Pressable>
 
         </View>

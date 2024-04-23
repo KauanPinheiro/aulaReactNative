@@ -4,13 +4,24 @@ const estilo = StyleSheet.create({
     
     titulo:{
         marginTop: 40,
-        marginLeft: 20
+        fontSize:35,
+        color:"black",
+        fontFamily:"Pixelify Sans",
+        fontWeight:"bold",
+            
+    },
+    titulo2:{
+        marginTop: 40,
+        fontSize:35,
+        color:"#80ADCA",
+        fontFamily:"Pixelify Sans",
+        fontWeight:"bold",
     },
     alinhamentoText:{
         justifyContent:"center",
         alignContent:"center",
         marginTop:70,
-        marginLeft:25
+        marginRight:165
 
     },
     fontP:{
@@ -74,8 +85,30 @@ const estilo = StyleSheet.create({
         borderRadius:5,
         borderColor:"black",
         borderWidth:1,
-        width:150,
+        width:160,
         height:50,
+        margin:25
+    },
+    textBtnRedes:{
+        color:"black",
+        fontSize:16,
+        fontFamily:"Pixelify Sans",
+        fontWeight:"bold",
+        margin:10
+    },
+    textRodape:{
+        color:"#B3C8CF",
+        fontSize:16,
+        fontFamily:"Pixelify Sans",
+        fontWeight:"bold",
+
+    },
+    textRodape2:{
+        color:"red",
+        fontSize:16,
+        fontFamily:"Pixelify Sans",
+        fontWeight:"bold",
+
     }
     
 })
