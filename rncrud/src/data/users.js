@@ -20,14 +20,14 @@ export default [
     },
     {
         id: 4,
-        nome: "Deadpoll Rebelde",
-        email: "deadpoll.rebelde@hotmail.com",
+        nome: "Vitória Almeida",
+        email: "vitoria.almeida@hotmail.com",
         avatarURL: 'https://cdn.pixabay.com/photo/2021/02/04/12/03/superhero-5981125_960_720.png'
     },
     {
         id: 5,
-        nome: "Deadpoll Yellow",
-        email: "deadpoll.yellow@hotmail.com",
+        nome: "Thiago Santos",
+        email: "thiago.santos@hotmail.com",
         avatarURL: 'https://cdn.pixabay.com/photo/2021/02/04/12/02/character-5981113_960_720.png'
     },
 ]

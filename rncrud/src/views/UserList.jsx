@@ -37,17 +37,24 @@ export default props => {
                     <Avatar source={{uri: user.avatarURL}}/> 
                     <ListItem.Content>
                         <ListItem.Title>{user.name}</ListItem.Title>
-                        <ListItem.Subtitle>{user.email}</ListItem.Subtitle>
-                    </ListItem.Content>    .
+                        <ListItem.Title>{user.email}</ListItem.Title>
+                    </ListItem.Content>    
 
                     <ListItem.Chevron
                         name="edit"
                         color="orange"
                         size={25}
-                        
+                        onPress={
+                            () => props.navigation.navigate('UserForm', user)
+                        }
                     />
                     <ListItem.Chevron
-                    
+                        name="delete"
+                        color="red"
+                        size={25}
+                        onPress={
+                            () => confirmUserDeletetion(user)
+                        }
                     />
 
                     </ListItem>
