@@ -4,7 +4,7 @@ export default [
         nome: "Hambuger",
         descricao: "Juicy beef patty on a fresh bun with all the fixings",
         preco: "$5.99",
-        img: "https://cdn.pixabay.com/photo/2013/07/12/16/53/burger-151421_1280.png"
+        img: "https://cdn.pixabay.com/photo/2024/05/06/17/02/burgers-8743798_1280.jpg"
 
     },
     {
