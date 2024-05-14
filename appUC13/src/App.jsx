@@ -25,7 +25,9 @@ const style = StyleSheet.create(
             position:"absolute",
             alignItems:"center",
             justifyContent:"center",
-            marginBottom:0
+            marginTop:800,
+            marginLeft:65
+            
         },
         textBtn:{
             textAlign:"center",

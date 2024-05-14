@@ -48,7 +48,7 @@ export default props => {
                     size={30}
                     backgroundColor="#FFA725"
                     borderRadius={20}
-                    onPress={() => setAdd(add ++)}
+                    onPress={() => setAdd(add +1)}
                     
                     
                 />
