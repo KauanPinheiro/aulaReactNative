@@ -1,9 +1,8 @@
 export default [
-    
     {
         id:1,
         name:"John's Baber",
-        km: "0.5 km "
+        km: "0.5 km ",
     },
     {
         id:2,
