@@ -9,7 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import Home from './Components/Home';
 import Login from './Components/Login';
-
+import Array from './Components/Array';
 
 const Drawer = createDrawerNavigator();
 
@@ -17,6 +17,7 @@ const Drawer = createDrawerNavigator();
 export default props => {
 
     return(
+    {/*
         <SafeAreaView style={{flex:1}}>
             <NavigationContainer>
                 <Drawer.Navigator>
@@ -25,5 +26,7 @@ export default props => {
                 </Drawer.Navigator>
             </NavigationContainer>
         </SafeAreaView>
+    */}
+    <Array/>
     )
 }
