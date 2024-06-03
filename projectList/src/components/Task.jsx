@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableWithoutFeedback } from "react-native";
 
 import commonStyles from "../commonStyles";
@@ -9,6 +9,7 @@ import 'moment/locale/pt-br'
 
 export default props => {
 
+    
     const tarefaConcluidaNao = props.concluidaEm != null ?
         { textDecorationLine: 'line-through' } : {}
 
@@ -21,6 +22,7 @@ export default props => {
         <View style={style.container}>
             <TouchableWithoutFeedback
                 onPress={() => props.toggleTask(props.id)}
+                
             >
                 <View style={style.checkContainer}>
                     {getCheckView(props.concluidaEm)}

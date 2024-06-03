@@ -1,7 +1,17 @@
 //Imports
-import React from "react";
-import { SafeAreaView, Text, View, ImageBackground, StyleSheet, FlatList } from "react-native";
+import React, { Component } from "react";
+import { SafeAreaView,
+        Text,
+        View,
+        ImageBackground,
+        StyleSheet,
+        FlatList,
+        TouchableOpacity,
+        Platform,
+        Alert } from "react-native";
+
 import Task from "../components/Task";
+import AddTask from "./AddTask";
 
 //Importando o estilo
 import commonStyles from "../commonStyles";
@@ -15,7 +25,8 @@ import TodayImage from '../../assets/imgs/today.jpg'
 
 const data = moment().locale('pt-br').format('MMM Do YY'); 
 
-export default props => {
+export default class TaskList extends Component  {
+
     state = {
         tasks: [{
             id: Math.random(),
@@ -28,9 +39,10 @@ export default props => {
             descricao: 'Ler livro de React Native',
             dataEstimada: new Date(),
             concluidaEm: null,
-        },
+        },  
         ]
     }
+
 
     toggleTask = taskId => {
         const tasks = [...this.state.tasks]
@@ -43,11 +55,17 @@ export default props => {
         setState({ tasks : tasks })
     }
 
+    render(){
+
     const today = moment().locale('pt-br').format('ddd, D [de] MMMM')
     
+    
     return (
-        //Inicio Código
+//Inicio Código
         <SafeAreaView style={style.container}>
+            <AddTask
+                
+            />
             <ImageBackground source={TodayImage} style={style.background}>
                <View style={style.titleBar}>
                     <Text style={style.title}>Hoje</Text>
@@ -55,16 +73,21 @@ export default props => {
                 </View>     
             </ImageBackground>
             <View style={style.taskList}>
-                {/*Importando a lista de marcação do componentes Tasks*/}
+                
+{/*Importando a lista de marcação do componentes Tasks*/}
+        
                     <FlatList
                         data={this.state.tasks}
                         keyExtractor={item => `${item.id}`}
                         renderItem={({item}) => <Task {...item} toggleTask={this.toggleTask} />}
                     />
+                    
             </View>
         </SafeAreaView>
-    )
-};
+
+        )
+    }
+}
                                                                      
 //Styles
 const style = StyleSheet.create({
