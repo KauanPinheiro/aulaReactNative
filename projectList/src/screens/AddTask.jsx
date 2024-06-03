@@ -13,8 +13,8 @@ export default class AddTask extends Component {
 
         return(
             <Modal
-            
-
+                transparent={true}
+                animationType="slide"
             >
 
             </Modal>
