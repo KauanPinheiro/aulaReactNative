@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Modal,View,TouchableWithoutFeedback,Text,TouchableOpacity,TextInput,Platform, StyleSheet} from "react-native"
-
 import DateTimePicker from "@react-native-community/datetimepicker"
 
 import commonStyles from "../commonStyles";
@@ -12,6 +11,39 @@ export default class AddTask extends Component {
 
     state = {
         ...initialState
+    }
+
+    save = () => {
+        const newTask = {
+            desc: this.state.desc,
+            date: this.state.date
+        }
+
+        this.props.onSave && this.props.onSave(newTask)
+        this.setState({ ...initialState })
+    }
+
+    getDatePicker = () => {
+        let datePicker = <DateTimePicker value={this.state.date}
+            onChange={(_, date) => this.setState({ date, showDatePicker: false })}
+            mode="date"
+        />
+
+        const dateString = moment(this.state.date).format('dddd, D [de] MMMM [de] YYYY')
+
+        if (Platform.OS === 'android') {
+            datePicker = (
+                <View>
+                    <TouchableOpacity onPress={() => this.setState({ showDatePicker: true })}>
+                        <Text style={style.date}>
+                            {dateString}
+                        </Text>
+                    </TouchableOpacity>
+                    {this.state.showDatePicker && datePicker}
+                </View>
+            )
+        }
+        return datePicker
     }
 
     render(){
@@ -32,8 +64,10 @@ export default class AddTask extends Component {
                             <TextInput
                                 style={style.input}
                                 placeholder="Informe a descrição"
-                                value={this.state.desc}
-                            />
+                                onChangeText={desc => this.setState({ desc })}
+                                value={this.state.desc}/>
+
+                                {this.getDatePicker()}
 
                                 <View style={style.buttons}>
                                     <TouchableOpacity
@@ -66,7 +100,7 @@ const style = StyleSheet.create(
     {
         background:{
             flex:1,
-            backgroundColor: "rgba(0,0,0,7)"
+            backgroundColor: "rgba(0,0,0,0.7)"
         },
         container:{
             backgroundColor:"#FFF"
