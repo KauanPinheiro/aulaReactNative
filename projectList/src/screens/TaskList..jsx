@@ -9,30 +9,25 @@ import { SafeAreaView,
         TouchableOpacity,
         Platform,
         Alert } from "react-native";
-
+        
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import commonStyles from "../commonStyles";
+
+import TodayImage from '../../assets/imgs/today.jpg'
+import moment from 'moment';
+import 'moment/locale/pt-br'
 
 import Task from "../components/Task";
 import AddTask from "./AddTask";
 
-//Importando o estilo
-import commonStyles from "../commonStyles";
-
-import moment from 'moment';
-import 'moment/locale/pt-br'
-
-//Import de imagens
-import TodayImage from '../../assets/imgs/today.jpg'
-
-
-const data = moment().locale('pt-br').format('MMM Do YY'); 
 
 export default class TaskList extends Component  {
 
     state = {
         showDoneTasks: true,
         showAddTask: false,
-        visibleTask: [],
+        visibleTasks: [],
         tasks: [{
             id: Math.random(),
             descricao: 'Comprar livro de React Native',
@@ -49,7 +44,7 @@ export default class TaskList extends Component  {
     }
 
     componentDidMout = () => {
-        this.fliterTaskS()
+        this.fliterTasks()
     }
 
     toggleFilter = () => {
@@ -66,6 +61,17 @@ export default class TaskList extends Component  {
             visibleTasks = this.state.tasks.filter(pending)
         }
         this.setState({ visibleTasks })
+    }
+
+    toggleTask = taskId => {
+        const tasks = [...this.state.tasks]
+        tasks.forEach(task => {
+            if (task.id === taskId) {
+                task.concluidaEm = task.concluidaEm ? null : new Date()
+            }
+        })
+
+        this.setState({ tasks : tasks }, this.filterTasks)
     }
 
     addTask = newTask => {
@@ -86,17 +92,6 @@ export default class TaskList extends Component  {
 
     }
     
-    toggleTask = taskId => {
-        const tasks = [...this.state.tasks]
-        tasks.forEach(task => {
-            if (task.id === taskId) {
-                task.concluidaEm = task.concluidaEm ? null : new Date()
-            }
-        })
-
-        setState({ tasks : tasks })
-    }
-
     render(){
 
     const today = moment().locale('pt-br').format('ddd, D [de] MMMM')
@@ -123,11 +118,12 @@ export default class TaskList extends Component  {
                     <Text style={style.subTitle}>{today}</Text>
                 </View>     
             </ImageBackground>
+
             <View style={style.taskList}>               
                     <FlatList
-                        data={this.state.tasks}
+                        data={this.state.visibleTasks}
                         keyExtractor={item => `${item.id}`}
-                        renderItem={({item}) => <Task {...item} toggleTask={this.toggleTask} />}
+                        renderItem={({ item }) => <Task {...item} toggleTask={this.toggleTask} />}
                     />
             </View>
             <TouchableOpacity

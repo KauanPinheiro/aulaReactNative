@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableWithoutFeedback } from "react-native";
+import { View, Text, StyleSheet, TouchableWithoutFeedback, TouchableOpacity } from "react-native";
+import { GestureHandlerRootView, Swipeable} from "react-native-gesture-handler"
 
 import commonStyles from "../commonStyles";
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -18,22 +19,34 @@ export default props => {
     const dateFormat = moment(date).locale('pt-br')
         .format('ddd, D [de] MMMM')
 
+    const getRightContent = () => {
+        return(
+            <TouchableOpacity style={sy} />
+        )
+    }
+
     return (
-        <View style={style.container}>
-            <TouchableWithoutFeedback
-                onPress={() => props.toggleTask(props.id)}
-                
+        <GestureHandlerRootView>
+            <Swipeable
+            renderRightActions={getRightContent}
+            renderLeftActions={getLeftContent}
+            onSwipeableLeftOpen={() => props.onDelete && props.onDelete(props.id)}
             >
-                <View style={style.checkContainer}>
-                    {getCheckView(props.concluidaEm)}
+                <View style={style.container}>
+                    <TouchableWithoutFeedback onPress={() => props.toggleTask(props.id)}>
+                        <View style={style.checkContainer}>
+                            {getCheckView(props.concluidaEm)}
+                        </View>
+                    </TouchableWithoutFeedback>
+                    <View>
+                        <Text style={[style.descricao, tarefaConcluidaNao]}>{props.descricao}</Text>
+                        <Text style={style.date}>{dateFormat}</Text>
+                    </View>
                 </View>
-            </TouchableWithoutFeedback>
-            <View>
-                <Text style={[style.descricao, tarefaConcluidaNao]}>{props.descricao}</Text>
-                <Text style={style.date}>{dateFormat}</Text>
-            </View>
-        </View>
+            </Swipeable>
+        </GestureHandlerRootView>
     )
+    
 }
 
 function getCheckView(concluidaEm) {

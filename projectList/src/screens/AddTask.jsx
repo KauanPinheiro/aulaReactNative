@@ -70,15 +70,11 @@ export default class AddTask extends Component {
                                 {this.getDatePicker()}
 
                                 <View style={style.buttons}>
-                                    <TouchableOpacity
-                                        onPress={this.props.onCancel}
-                                    >
+                                    <TouchableOpacity onPress={this.props.onCancel}>
                                         <Text style={style.button}>Cancelar</Text>
                                     </TouchableOpacity> 
 
-                                    <TouchableOpacity
-                                        onPress={this.save}
-                                    >
+                                    <TouchableOpacity onPress={this.save}>
                                         <Text style={style.button}>Salvar</Text>
                                     </TouchableOpacity>
 
